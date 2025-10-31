@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fathan Wibowo - Portfolio</title>
+    <!-- Konfigurasi Tailwind (didefinisikan sebelum memuat CDN agar kelas kustom tersedia) -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                        'source': ['Source Sans Pro', 'sans-serif'],
+                    },
+                    colors: {
+                        // brand palette (used by index.html)
+                        'brand-dark': '#111827',
+                        'brand-card': '#1F2937',
+                        'brand-primary': '#38bdf8',
+                        'brand-secondary': '#9ca3af',
+                        // light/dark palette used by index1.html
+                        'light-bg': '#f7f7f7',
+                        'light-card': '#ffffff',
+                        'light-text': '#333333',
+                        'light-text-secondary': '#555555',
+                        'light-border': '#e5e7eb',
+                        'light-brand': '#0ea5e9',
+                        'dark-bg': '#1b1b1e',
+                        'dark-card': '#2a2a2e',
+                        'dark-text': '#e5e5e5',
+                        'dark-text-secondary': '#a0a0a0',
+                        'dark-border': '#3a3a3e',
+                        'dark-brand': '#38bdf8',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Memuat Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Memuat font Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS tambahan untuk efek halus */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-brand-dark text-brand-secondary selection:bg-brand-primary selection:text-white">
+
+    <!-- Navigasi Header -->
+    <nav class="sticky top-0 z-50 bg-brand-dark bg-opacity-80 backdrop-blur-md border-b border-gray-700">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo / Nama -->
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-2xl font-bold text-white">Fathan "An" Wibowo</a>
+                </div>
+                <!-- Link Navigasi -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#about" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
+                        <a href="#impact" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Impact</a>
+                        <a href="MainRangkumanPage.html" class="text-white bg-brand-primary/80 hover:bg-brand-primary px-3 py-2 rounded-md text-sm font-medium">Rangkuman Materi</a>
+                        <a href="#contact" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+                <!-- Tombol Menu Mobile (opsional) -->
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" class="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <!-- Icon menu (hamburger) -->
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Konten Utama -->
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+        <!-- 1. Hero Section -->
+        <header class="text-center mb-24 mt-12">
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-4">
+                Impact & <span class="text-brand-primary">Growth</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-brand-secondary max-w-2xl mx-auto">
+                Portfolio by Fathan Wibowo. Seorang mahasiswa Sistem Informasi yang adaptif dan berwawasan global.
+            </p>
+            <div class="mt-8 flex justify-center space-x-6">
+                <a href="https://www.linkedin.com/in/fathanwibowo" target="_blank" class="text-gray-400 hover:text-brand-primary transition-colors">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd"/></svg>
+                </a>
+                <a href="https://twitter.com/Fathanwibowo_" target="_blank" class="text-gray-400 hover:text-brand-primary transition-colors">
+                    <!-- Icon X/Twitter Sederhana -->
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+                <a href="tel:+6281218431964" class="text-gray-400 hover:text-brand-primary transition-colors">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.24.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                </a>
+            </div>
+        </header>
+
+        <!-- 2. About Me -->
+        <section id="about" class="mb-24 scroll-mt-20">
+            <h2 class="text-4xl font-bold text-white mb-8">About Me</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Kolom Teks -->
+                <div class="md:col-span-2 bg-brand-card p-6 rounded-lg shadow-lg">
+                    <p class="text-lg leading-relaxed mb-6">
+                        An adaptable and globally-minded Information Systems undergraduate passionate about sustainability, cultural exchange, and digital innovation.
+                    </p>
+                    <h3 class="text-xl font-semibold text-white mb-4">Values That Stands Me Out:</h3>
+                    <ul class="space-y-3">
+                        <li><strong class="text-brand-primary">Leadership:</strong> VP Program Heroes for Life 9.0, Head of PR GDGoC in Unhas.</li>
+                        <li><strong class="text-brand-primary">Impact:</strong> MVP awards in AIESEC projects, youth empowerment initiatives.</li>
+                        <li><strong class="text-brand-primary">Global Outlook:</strong> 8th International Cultural Program participant.</li>
+                    </ul>
+                </div>
+                <!-- Kolom Foto -->
+                <div class="md:col-span-1">
+                    <img src="https://placehold.co/600x800/1F2937/FFFFFF?text=Fathan+Wibowo" 
+                         alt="Foto Fathan Wibowo"
+                         class="rounded-lg shadow-lg object-cover w-full h-full min-h-[300px]">
+                    <!-- Ganti 'src' di atas dengan link ke foto Anda -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. My Role & Impact -->
+        <section id="impact" class="mb-24 scroll-mt-20">
+            <h2 class="text-4xl font-bold text-white mb-8">My Impact & Experience</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Kartu 1: Heroes For Life 9.0 -->
+                <div class="bg-brand-card p-6 rounded-lg shadow-lg transform transition-all hover:scale-105 hover:shadow-brand-primary/20">
+                    <h3 class="text-xl font-bold text-white mb-2">VP Program - Heroes For Life 9.0</h3>
+                    <p class="mb-4">Led as Vice President Program. Achieved 100% agenda success & secured 5 expert speakers. Empowered participants through SDG-based initiatives.</p>
+                    <span class="text-sm font-medium text-brand-primary bg-brand-primary/10 px-3 py-1 rounded-full">Leadership</span>
+                </div>
+
+                <!-- Kartu 2: GDGOC UNHAS -->
+                <div class="bg-brand-card p-6 rounded-lg shadow-lg transform transition-all hover:scale-105 hover:shadow-brand-primary/20">
+                    <h3 class="text-xl font-bold text-white mb-2">Head of PR - GDGOC UNHAS</h3>
+                    <p class="mb-4">Led a 3-person PR team, managed partnerships, and approved all official comms. Built a trusted brand while engaging students in AI adoption.</p>
+                    <span class="text-sm font-medium text-brand-primary bg-brand-primary/10 px-3 py-1 rounded-full">Branding</span>
+                </div>
+
+                <!-- Kartu 3: Google Student Ambassador -->
+                <div class="bg-brand-card p-6 rounded-lg shadow-lg transform transition-all hover:scale-105 hover:shadow-brand-primary/20">
+                    <h3 class="text-xl font-bold text-white mb-2">Google Student Ambassador</h3>
+                    <p class="mb-4">Acted as a campus influencer and advocate for Google Gemini AI, creating awareness through campaigns and content. Helped peers access cutting-edge AI tools.</p>
+                    <span class="text-sm font-medium text-brand-primary bg-brand-primary/10 px-3 py-1 rounded-full">Advocacy</span>
+                </div>
+
+            </div>
+        </section>
+        
+        <!-- 5. Awards / Work Ethic -->
+        <section id="awards" class="mb-24 scroll-mt-20">
+            <h2 class="text-4xl font-bold text-white mb-8">Work Ethic & Awards</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Award 1 -->
+                <div class="bg-brand-card rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://placehold.co/600x400/1F2937/FFFFFF?text=MVP+Growth+6.0" alt="MVP AIESEC UNHAS" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold text-white">MVP - Local Project Growth 6.0</h3>
+                        <p class="text-sm">AIESEC in UNHAS (Des 2024)</p>
+                    </div>
+                </div>
+                <!-- Award 2 -->
+                <div class="bg-brand-card rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://placehold.co/600x400/1F2937/FFFFFF?text=Volunteer+Terbaik+III" alt="Volunteer Terbaik III" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold text-white">Volunteer Terbaik III</h3>
+                        <p class="text-sm">Campaign Hari Peduli Sampah Nasional (Feb 2025)</p>
+                    </div>
+                </div>
+                <!-- Award 3 -->
+                <div class="bg-brand-card rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://placehold.co/600x400/1F2937/FFFFFF?text=Best+Delegate" alt="Best Delegate Impact Circle 8.0" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold text-white">Best Delegate - Impact Circle 8.0</h3>
+                        <p class="text-sm">AIESEC in Unpad (Apr 2025)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-brand-card border-t border-gray-700 mt-20 scroll-mt-20">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 text-center">
+            <h2 class="text-3xl font-bold text-white mb-4">Thank you.</h2>
+            <p class="text-lg text-gray-300 mb-8 max-w-lg mx-auto">
+                I am eager to embrace new journeys, grow alongside diverse peers, and use creativity and technology to design solutions that matter.
+            </p>
+            <!-- Social Links -->
+            <div class="mt-8 flex justify-center space-x-6">
+                <a href="https://www.linkedin.com/in/fathanwibowo" target="_blank" class="text-gray-400 hover:text-brand-primary transition-colors">
+                    <span class="sr-only">LinkedIn</span>
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd"/></svg>
+                </a>
+                <a href="https://twitter.com/Fathanwibowo_" target="_blank" class="text-gray-400 hover:text-brand-primary transition-colors">
+                    <span class="sr-only">X/Twitter</span>
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+                <a href="tel:+6281218431964" class="text-gray-400 hover:text-brand-primary transition-colors">
+                    <span class="sr-only">Phone</span>
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.24.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                </a>
+            </div>
+            <p class="mt-8 text-sm text-gray-500">&copy; 2025 Fathan Wibowo. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

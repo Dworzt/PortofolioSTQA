@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Rangkuman Kelompok 1 - Strategi & Klasifikasi Testing</title>
+    <!-- Shared Tailwind config (declared before CDN) -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                        'source': ['Source Sans Pro', 'sans-serif']
+                    },
+                    colors: {
+                        'light-bg': '#f7f7f7',
+                        'light-card': '#ffffff',
+                        'light-text': '#333333',
+                        'light-text-secondary': '#555555',
+                        'light-border': '#e5e7eb',
+                        'light-brand': '#0ea5e9',
+                        'dark-bg': '#1b1b1e',
+                        'dark-card': '#2a2a2e',
+                        'dark-text': '#e5e5e5',
+                        'dark-text-secondary': '#a0a0a0',
+                        'dark-border': '#3a3a3e',
+                        'dark-brand': '#38bdf8',
+                        'brand-dark': '#111827',
+                        'brand-card': '#1F2937',
+                        'brand-primary': '#38bdf8',
+                        'brand-secondary': '#9ca3af'
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        h1,h2,h3 { font-family: 'Source Sans Pro', sans-serif; }
+    </style>
+</head>
+<body class="bg-light-bg dark:bg-dark-bg min-h-screen text-light-text dark:text-dark-text">
+    <header class="bg-light-card dark:bg-dark-card border-b border-light-border dark:border-dark-border">
+        <div class="max-w-5xl mx-auto px-6 py-6 flex items-center justify-between">
+            <a href="MainRangkumanPage.html" class="text-lg font-bold text-light-text dark:text-dark-text">← Kembali ke Daftar Rangkuman</a>
+            <nav class="space-x-4">
+                <a href="index.html" class="text-sm text-light-text-secondary dark:text-dark-text-secondary hover:text-light-brand dark:hover:text-dark-brand">Portfolio</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-12">
+        <article>
+            <h1 class="text-3xl md:text-4xl font-extrabold mb-4 text-light-text dark:text-dark-text">Kelompok 1: Strategi & Klasifikasi Testing</h1>
+            <p class="text-lg text-light-text-secondary dark:text-dark-text-secondary mb-6">Dasar-dasar STLC & tipe pengujian. Ringkasan ini merangkum poin-poin utama dari materi presentasi kelompok 1.</p>
+
+            <section class="bg-light-card dark:bg-dark-card p-6 rounded-lg shadow border border-light-border dark:border-dark-border mb-6">
+                <h2 class="text-xl font-semibold mb-3">Gambaran Umum</h2>
+                <p class="mb-3">Software Testing Life Cycle (STLC) menggambarkan fase-fase pengujian mulai dari perencanaan, desain, eksekusi, hingga pelaporan. Tujuan testing adalah memastikan software memenuhi kebutuhan fungsional dan non-fungsional serta menemukan bug sedini mungkin.</p>
+                <ul class="list-disc list-inside space-y-2 text-sm text-light-text-secondary dark:text-dark-text-secondary">
+                    <li>Fokus pada kualitas: menemukan kesalahan sebelum rilis.</li>
+                    <li>Testing bukan hanya eksekusi test case — juga melibatkan perencanaan, review, dan reporting.</li>
+                </ul>
+            </section>
+
+            <section class="mb-6">
+                <h3 class="text-lg font-bold mb-2">Klasifikasi Utama</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-light-card dark:bg-dark-card p-4 rounded-lg border border-light-border dark:border-dark-border">
+                        <h4 class="font-semibold mb-2">Level Testing</h4>
+                        <ul class="list-disc list-inside text-sm space-y-1 text-light-text-secondary dark:text-dark-text-secondary">
+                            <li>Unit Testing — pengujian tingkat fungsi/metode.</li>
+                            <li>Integration Testing — pengujian antar-modul atau antar-komponen.</li>
+                            <li>System Testing — pengujian sistem secara keseluruhan.</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-light-card dark:bg-dark-card p-4 rounded-lg border border-light-border dark:border-dark-border">
+                        <h4 class="font-semibold mb-2">Functional vs Non-Functional</h4>
+                        <ul class="list-disc list-inside text-sm space-y-1 text-light-text-secondary dark:text-dark-text-secondary">
+                            <li>Functional — memeriksa perilaku yang diharapkan (fitur).</li>
+                            <li>Non-Functional — performance, security, usability, reliability.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-6">
+                <h3 class="text-lg font-bold mb-2">Black Box vs White Box</h3>
+                <p class="mb-3 text-sm text-light-text-secondary dark:text-dark-text-secondary">Black-box testing memvalidasi aplikasi dari perspektif pengguna tanpa melihat implementasi. White-box testing memeriksa struktur internal dan aliran data untuk menemukan masalah pada level kode.</p>
+                <ul class="list-disc list-inside text-sm space-y-1 text-light-text-secondary dark:text-dark-text-secondary">
+                    <li>Black-box: fokus pada input & output.</li>
+                    <li>White-box: fokus pada jalur kode, kondisi, dan logika internal.</li>
+                </ul>
+            </section>
+
+            <section class="mb-6">
+                <h3 class="text-lg font-bold mb-2">Praktik & Tips</h3>
+                <ul class="list-disc list-inside text-sm space-y-2 text-light-text-secondary dark:text-dark-text-secondary">
+                    <li>Tulis test case yang jelas dan dapat direproduksi.</li>
+                    <li>Gunakan kombinasi manual dan otomatisasi sesuai kebutuhan.</li>
+                    <li>Fokus pada area berisiko tinggi (critical paths).</li>
+                    <li>Dokumentasikan hasil dan buat bug report yang informatif (langkah, ekspektasi, hasil aktual, severity).</li>
+                </ul>
+            </section>
+
+            <section class="mt-8 flex items-center justify-between">
+                <a href="MainRangkumanPage.html" class="text-sm text-light-text-secondary dark:text-dark-text-secondary hover:underline">← Kembali ke Daftar Rangkuman</a>
+                <div class="space-x-3">
+                    <a href="Rangkuman2.html" class="inline-block bg-brand-primary text-white px-4 py-2 rounded hover:bg-blue-400">Berikutnya: Kelompok 2 →</a>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer class="border-t border-light-border dark:border-dark-border py-6 text-center text-sm text-light-text-secondary dark:text-dark-text-secondary">
+        © 2025 Fathan Wibowo
+    </footer>
+</body>
+</html>

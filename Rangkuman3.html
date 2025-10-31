@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Rangkuman Kelompok 3 - Perencanaan Pengujian (Test Plan)</title>
+    <script>
+        tailwind.config = { darkMode: 'class', theme: { extend: { fontFamily: { 'sans': ['Inter','sans-serif'], 'source': ['Source Sans Pro','sans-serif'] }, colors: { 'light-bg':'#f7f7f7','light-card':'#ffffff','light-text':'#333333','light-text-secondary':'#555555','light-border':'#e5e7eb','light-brand':'#0ea5e9','dark-bg':'#1b1b1e','dark-card':'#2a2a2e','dark-text':'#e5e5e5','dark-text-secondary':'#a0a0a0','dark-border':'#3a3a3e','dark-brand':'#38bdf8','brand-dark':'#111827','brand-card':'#1F2937','brand-primary':'#38bdf8','brand-secondary':'#9ca3af' } } } }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>body{font-family:'Inter',sans-serif} h1,h2,h3{font-family:'Source Sans Pro',sans-serif}</style>
+</head>
+<body class="bg-light-bg dark:bg-dark-bg min-h-screen text-light-text dark:text-dark-text">
+  <header class="bg-light-card dark:bg-dark-card border-b border-light-border dark:border-dark-border">
+    <div class="max-w-5xl mx-auto px-6 py-6 flex items-center justify-between">
+      <a href="MainRangkumanPage.html" class="text-lg font-bold text-light-text dark:text-dark-text">← Daftar Rangkuman</a>
+      <nav><a href="index.html" class="text-sm text-light-text-secondary dark:text-dark-text-secondary">Portfolio</a></nav>
+    </div>
+  </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-12">
+    <article>
+      <h1 class="text-3xl md:text-4xl font-extrabold mb-4">Kelompok 3: Perencanaan Pengujian (Test Plan)</h1>
+      <p class="text-lg text-light-text-secondary dark:text-dark-text-secondary mb-6">Panduan detail tentang menyusun Test Plan yang efektif — struktur dokumen, elemen kritis, contoh template, serta praktik terbaik untuk memastikan proses pengujian terorganisir.</p>
+
+      <section class="bg-light-card dark:bg-dark-card p-6 rounded-lg shadow border border-light-border dark:border-dark-border mb-6">
+        <h2 class="text-xl font-semibold mb-3">Definisi & Tujuan</h2>
+        <p class="mb-3">Test Plan adalah dokumen resmi yang menetapkan strategi pengujian, cakupan, sumber daya, jadwal, deliverables, dan kriteria keberhasilan/keluaran. Tujuannya: mengurangi ambiguitas, menyelaraskan tim, dan menyediakan referensi sepanjang fase pengujian.</p>
+        <p class="text-sm text-light-text-secondary dark:text-dark-text-secondary">Dokumen ini sebaiknya ditinjau bersama stakeholder (PM, dev lead, QA lead) sebelum eksekusi.</p>
+      </section>
+
+      <section class="mb-6">
+        <h3 class="text-lg font-bold mb-2">Struktur Test Plan (ringkasan IEEE 829)</h3>
+        <ol class="list-decimal list-inside space-y-2 text-sm text-light-text-secondary dark:text-dark-text-secondary mb-3">
+          <li>Test Plan Identifier & Revision History</li>
+          <li>Introduction — tujuan dan ruang lingkup</li>
+          <li>Test Items — fitur/komponen yang diuji</li>
+          <li>Features to be Tested / Not to be Tested</li>
+          <li>Approach — strategi pengujian & teknik</li>
+          <li>Pass/Fail Criteria dan Suspension Criteria</li>
+          <li>Test Deliverables (dokumen, laporan, skrip)</li>
+          <li>Testing Tasks & Schedule</li>
+          <li>Environmental Needs (hardware, software, test data)</li>
+          <li>Responsibilities & Staffing</li>
+          <li>Risks, Assumptions, & Mitigation</li>
+        </ol>
+      </section>
+
+      <section class="mb-6">
+        <h3 class="text-lg font-bold mb-2">Contoh Ringkas Template</h3>
+        <div class="bg-light-card dark:bg-dark-card p-4 rounded border border-light-border dark:border-dark-border text-sm text-light-text-secondary dark:text-dark-text-secondary">
+          <strong>Test Plan ID:</strong> TP-APP-001<br>
+          <strong>Project:</strong> Aplikasi BMI<br>
+          <strong>Scope:</strong> Fitur kalkulasi BMI & history<br>
+          <strong>Approach:</strong> Manual regression + automasi unit tests dan API smoke tests<br>
+          <strong>Entry Criteria:</strong> Build passing smoke tests, staging environment ready<br>
+          <strong>Exit Criteria:</strong> Semua critical bugs fixed, >90% test case pass
+        </div>
+      </section>
+
+      <section class="mb-6">
+        <h3 class="text-lg font-bold mb-2">Pendekatan & Teknik</h3>
+        <p class="text-sm text-light-text-secondary dark:text-dark-text-secondary mb-2">Pilih teknik berdasarkan risiko dan tujuan: exploratory testing, regression, smoke, sanity, performance sampling, dan security scanning.</p>
+        <ul class="list-disc list-inside text-sm text-light-text-secondary dark:text-dark-text-secondary space-y-1">
+          <li>Prioritaskan test case untuk area kritis dan sering dipakai.</li>
+          <li>Gunakan automasi untuk smoke/regression yang stabil.</li>
+          <li>Selenggarakan exploratory sessions untuk menemukan masalah yang tidak tertutupi test case.</li>
+        </ul>
+      </section>
+
+      <section class="mb-6">
+        <h3 class="text-lg font-bold mb-2">Sumber Daya, Jadwal & Estimasi</h3>
+        <p class="text-sm text-light-text-secondary dark:text-dark-text-secondary mb-2">Buat breakdown tasks: test design, test data preparation, environment setup, eksekusi, dan reporting. Sertakan estimasi effort (person-hours) untuk setiap aktivitas dan dependencies.</p>
+        <ul class="list-disc list-inside text-sm text-light-text-secondary dark:text-dark-text-secondary">
+          <li>Contoh: Test design (16 jam), Test data (8 jam), Eksekusi (40 jam), Bug triage (8 jam).</li>
+        </ul>
+      </section>
+
+      <section class="mb-6">
+        <h3 class="text-lg font-bold mb-2">Pass/Fail, Suspension & Resumption Criteria</h3>
+        <p class="text-sm text-light-text-secondary dark:text-dark-text-secondary">Tentukan batasan untuk menilai apakah build dapat diuji atau harus ditunda. Contoh: jika >10% test case failed atau ada blocking bug, suspend dan notif tim dev untuk hotfix.</p>
+      </section>
+
+      <section class="mb-6">
+        <h3 class="text-lg font-bold mb-2">Risiko & Mitigasi</h3>
+        <p class="text-sm text-light-text-secondary dark:text-dark-text-secondary mb-2">Contoh risiko: tidak tersedianya test environment, delay dependency API, kurangnya data. Mitigasi: environment fallback, mock services, parallelize tasks.</p>
+      </section>
+
+      <section class="mt-8 flex items-center justify-between">
+        <a href="Rangkuman2.html" class="text-sm text-light-text-secondary dark:text-dark-text-secondary hover:underline">← Sebelumnya: Kelompok 2</a>
+        <a href="Rangkuman4.html" class="inline-block bg-brand-primary text-white px-4 py-2 rounded">Berikutnya: Kelompok 4 →</a>
+      </section>
+    </article>
+  </main>
+
+  <footer class="border-t border-light-border dark:border-dark-border py-6 text-center text-sm text-light-text-secondary dark:text-dark-text-secondary">© 2025 Fathan Wibowo</footer>
+</body>
+</html>

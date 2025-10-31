@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Daftar Rangkuman Materi - Fathan Wibowo (fixed)</title>
+
+    <!-- Tailwind runtime config (before CDN) -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                        'source': ['Source Sans Pro', 'sans-serif']
+                    },
+                    colors: {
+                        'light-bg': '#f7f7f7',
+                        'light-card': '#ffffff',
+                        'light-text': '#333333',
+                        'light-text-secondary': '#555555',
+                        'light-border': '#e5e7eb',
+                        'light-brand': '#0ea5e9',
+                        'dark-bg': '#1b1b1e',
+                        'dark-card': '#2a2a2e',
+                        'dark-text': '#e5e5e5',
+                        'dark-text-secondary': '#a0a0a0',
+                        'dark-border': '#3a3a3e',
+                        'dark-brand': '#38bdf8',
+                        'brand-dark': '#111827',
+                        'brand-card': '#1F2937',
+                        'brand-primary': '#38bdf8',
+                        'brand-secondary': '#9ca3af'
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Fonts & icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
+
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        h1,h2,h3,h4,h5,h6 { font-family: 'Source Sans Pro', sans-serif; }
+        #toc-wrapper a { display:block; font-size:0.875rem; padding:0.25rem 0; color:inherit; transition:transform .18s ease-out; }
+        #toc-wrapper a:hover { transform:translateX(6px); }
+    </style>
+    <script>
+        // Dark mode initialization
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+        function toggleTheme() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.theme = 'light';
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.theme = 'dark';
+            }
+        }
+    </script>
+</head>
+<body class="bg-light-bg dark:bg-dark-bg text-light-text dark:text-dark-text">
+    <div class="flex min-h-screen">
+        <!-- Sidebar (left) -->
+        <aside id="sidebar" class="w-64 bg-light-card dark:bg-dark-card border-r border-light-border dark:border-dark-border p-6 flex-col flex-shrink-0 h-screen sticky top-0 hidden md:flex">
+            <!-- Profile -->
+            <header class="flex flex-col items-center text-center">
+                <a href="index.html" class="block">
+                    <img src="https://placehold.co/112x112/38bdf8/FFFFFF?text=FW" alt="Avatar Fathan Wibowo" class="rounded-full w-28 h-28 mb-4 border-4 border-light-border dark:border-dark-border">
+                </a>
+                <a href="index.html" class="text-xl font-bold text-light-text dark:text-dark-text">Fathan Wibowo</a>
+                <p class="text-sm mt-1">Information Systems Student</p>
+            </header>
+
+            <!-- Sidebar navigation -->
+            <nav class="flex-grow mt-8">
+                <ul class="space-y-2">
+                    <li><a href="index.html" class="flex items-center space-x-3 px-3 py-2 rounded-md hover:bg-light-bg dark:hover:bg-dark-bg"><i class="fa-fw fas fa-home w-5"></i><span>Portfolio</span></a></li>
+                    <li><a href="MainRangkumanPage-fixed.html" class="flex items-center space-x-3 px-3 py-2 rounded-md font-bold text-light-brand dark:text-dark-brand bg-light-bg dark:bg-dark-bg"><i class="fa-fw fas fa-file-alt w-5"></i><span>Rangkuman STQA</span></a></li>
+                    <li><a href="index1.html" class="flex items-center space-x-3 px-3 py-2 rounded-md hover:bg-light-bg dark:hover:bg-dark-bg"><i class="fa-fw fas fa-file w-5"></i><span>Halaman lama</span></a></li>
+                </ul>
+            </nav>
+
+            <!-- Sidebar bottom actions -->
+            <div class="mt-auto flex justify-center space-x-4 text-lg">
+                <button type="button" class="p-2 rounded-md hover:bg-light-bg dark:hover:bg-dark-bg" aria-label="Switch Mode" id="mode-toggle" onclick="toggleTheme()">
+                    <i class="fas fa-adjust"></i>
+                </button>
+                <span class="border-l border-light-border dark:border-dark-border"></span>
+                <a href="https://www.linkedin.com/in/fathanwibowo" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" class="hover:text-light-brand dark:hover:text-dark-brand">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://www.instagram.com/fathanwibowo_" aria-label="Instagram" target="_blank" rel="noopener noreferrer" class="hover:text-light-brand dark:hover:text-dark-brand">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://twitter.com/Fathanwibowo_" aria-label="Twitter" target="_blank" rel="noopener noreferrer" class="hover:text-light-brand dark:hover:text-dark-brand">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main content area -->
+        <div class="flex-1 px-6 py-8">
+            <main class="max-w-5xl mx-auto">
+                <h1 class="text-3xl md:text-4xl font-extrabold mb-4 text-light-text dark:text-dark-text">Daftar Rangkuman Materi Presentasi (fixed)</h1>
+                <p class="text-sm text-light-text-secondary dark:text-dark-text-secondary mb-8">Pilih sesi untuk melihat rangkuman lengkap materi presentasi.</p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <a href="Rangkuman1.html" class="block bg-light-card dark:bg-dark-card p-6 rounded-lg shadow hover:shadow-lg border border-light-border dark:border-dark-border">
+                        <h3 class="text-lg font-bold mb-2 text-light-text dark:text-dark-text">Kelompok 1: Strategi & Klasifikasi Testing</h3>
+                        <p class="text-sm text-light-text-secondary dark:text-dark-text-secondary">Dasar-dasar STLC, level testing, fungsional vs non-fungsional, black/white box.</p>
+                    </a>
+
+                    <a href="Rangkuman2.html" class="block bg-light-card dark:bg-dark-card p-6 rounded-lg shadow border border-light-border dark:border-dark-border">
+                        <h3 class="text-lg font-bold mb-2 text-light-text dark:text-dark-text">Kelompok 2: UI/UX Testing</h3>
+                        <p class="text-sm text-light-text-secondary dark:text-dark-text-secondary">Ringkasan singkat (placeholder).</p>
+                    </a>
+
+                    <a href="Rangkuman3.html" class="block bg-light-card dark:bg-dark-card p-6 rounded-lg shadow border border-light-border dark:border-dark-border">
+                        <h3 class="text-lg font-bold mb-2 text-light-text dark:text-dark-text">Kelompok 3: Test Plan</h3>
+                        <p class="text-sm text-light-text-secondary dark:text-dark-text-secondary">Ringkasan singkat (placeholder).</p>
+                    </a>
+
+                    <a href="Rangkuman4.html" class="block bg-light-card dark:bg-dark-card p-6 rounded-lg shadow border border-light-border dark:border-dark-border">
+                        <h3 class="text-lg font-bold mb-2 text-light-text dark:text-dark-text">Kelompok 4: Test Case & Bug Report</h3>
+                        <p class="text-sm text-light-text-secondary dark:text-dark-text-secondary">Ringkasan singkat (placeholder).</p>
+                    </a>
+
+                    <a href="Rangkuman5.html" class="block bg-light-card dark:bg-dark-card p-6 rounded-lg shadow border border-light-border dark:border-dark-border">
+                        <h3 class="text-lg font-bold mb-2 text-light-text dark:text-dark-text">Kelompok 5: Unit Testing</h3>
+                        <p class="text-sm text-light-text-secondary dark:text-dark-text-secondary">Ringkasan singkat (placeholder).</p>
+                    </a>
+
+                    <a href="Rangkuman6.html" class="block bg-light-card dark:bg-dark-card p-6 rounded-lg shadow border border-light-border dark:border-dark-border">
+                        <h3 class="text-lg font-bold mb-2 text-light-text dark:text-dark-text">Kelompok 6: API Testing</h3>
+                        <p class="text-sm text-light-text-secondary dark:text-dark-text-secondary">Ringkasan singkat (placeholder).</p>
+                    </a>
+
+                    <a href="Rangkuman7.html" class="block bg-light-card dark:bg-dark-card p-6 rounded-lg shadow border border-light-border dark:border-dark-border">
+                        <h3 class="text-lg font-bold mb-2 text-light-text dark:text-dark-text">Kelompok 7: Selenium</h3>
+                        <p class="text-sm text-light-text-secondary dark:text-dark-text-secondary">Ringkasan singkat (placeholder).</p>
+                    </a>
+
+                    <a href="Rangkuman8.html" class="block bg-light-card dark:bg-dark-card p-6 rounded-lg shadow border border-light-border dark:border-dark-border">
+                        <h3 class="text-lg font-bold mb-2 text-light-text dark:text-dark-text">Kelompok 8: Cypress</h3>
+                        <p class="text-sm text-light-text-secondary dark:text-dark-text-secondary">Ringkasan singkat (placeholder).</p>
+                    </a>
+                </div>
+            </main>
+
+            <footer class="mt-12 py-6 text-center text-sm text-light-text-secondary dark:text-dark-text-secondary">
+                © 2025 Fathan Wibowo. Halaman utama rangkuman.
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

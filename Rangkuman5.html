@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Rangkuman Kelompok 5 - Pengantar Unit Testing</title>
+  <script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { fontFamily:{'sans':['Inter','sans-serif'],'source':['Source Sans Pro','sans-serif']}, colors:{'light-bg':'#f7f7f7','light-card':'#ffffff','light-text':'#333333','light-text-secondary':'#555555','light-border':'#e5e7eb','light-brand':'#0ea5e9','dark-bg':'#1b1b1e','dark-card':'#2a2a2e','dark-text':'#e5e5e5','dark-text-secondary':'#a0a0a0','dark-border':'#3a3a3e','dark-brand':'#38bdf8','brand-dark':'#111827','brand-card':'#1F2937','brand-primary':'#38bdf8','brand-secondary':'#9ca3af'} } } }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>body{font-family:'Inter',sans-serif} h1,h2,h3{font-family:'Source Sans Pro',sans-serif}</style>
+</head>
+<body class="bg-light-bg dark:bg-dark-bg min-h-screen text-light-text dark:text-dark-text">
+  <header class="bg-light-card dark:bg-dark-card border-b border-light-border dark:border-dark-border">
+    <div class="max-w-5xl mx-auto px-6 py-6 flex items-center justify-between">
+      <a href="MainRangkumanPage.html" class="text-lg font-bold text-light-text dark:text-dark-text">← Daftar Rangkuman</a>
+      <nav><a href="index.html" class="text-sm text-light-text-secondary dark:text-dark-text-secondary">Portfolio</a></nav>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-6 py-12">
+    <article>
+      <h1 class="text-3xl md:text-4xl font-extrabold mb-4">Kelompok 5: Pengantar Unit Testing</h1>
+      <p class="text-lg text-light-text-secondary dark:text-dark-text-secondary mb-6">Catatan mendalam tentang unit testing: tujuan, strategi penulisan tes, isolasi dependensi, contoh praktis, dan tips menjaga suite tes cepat dan andal.</p>
+
+      <section class="bg-light-card dark:bg-dark-card p-6 rounded-lg shadow border border-light-border dark:border-dark-border mb-6">
+        <h2 class="text-xl font-semibold mb-3">Tujuan Unit Testing</h2>
+        <ul class="list-disc list-inside text-sm text-light-text-secondary dark:text-dark-text-secondary">
+          <li>Verifikasi perilaku unit terkecil (fungsi/metode) secara cepat.</li>
+          <li>Deteksi regresi sedini mungkin.</li>
+          <li>Mendokumentasikan kontrak fungsi (input/output yang diharapkan).</li>
+        </ul>
+      </section>
+
+      <section class="mb-6">
+        <h3 class="text-lg font-bold mb-2">Prinsip Penulisan Tes yang Baik</h3>
+        <ul class="list-disc list-inside text-sm text-light-text-secondary dark:text-dark-text-secondary space-y-1">
+          <li>Setiap tes hanya menguji satu skenario/perilaku.</li>
+          <li>Tes harus deterministik dan independen (dapat dijalankan berurutan atau paralel).</li>
+          <li>Gunakan nama tes yang jelas dan deskriptif.</li>
+          <li>Jaga agar fixture/setup singkat sehingga tes tetap cepat.</li>
+        </ul>
+      </section>
+
+      <section class="mb-6">
+        <h3 class="text-lg font-bold mb-2">Pola: Arrange, Act, Assert (AAA) — Contoh</h3>
+        <pre class="bg-gray-50 dark:bg-gray-800 p-3 rounded text-sm text-light-text-secondary dark:text-dark-text-secondary overflow-auto">// Arrange
+const input = {height:170, weight:65};
+// Act
+const result = calculateBMI(input);
+// Assert
+expect(result.bmi).toBeCloseTo(22.49, 2);
+        </pre>
+        <p class="text-sm text-light-text-secondary dark:text-dark-text-secondary mt-2">Contoh di atas memperlihatkan format AAA pada pseudocode test.</p>
+      </section>
+
+      <section class="mb-6">
+        <h3 class="text-lg font-bold mb-2">Isolasi, Mocking & Test Doubles</h3>
+        <p class="text-sm text-light-text-secondary dark:text-dark-text-secondary mb-2">Untuk menjaga unit tests cepat dan deterministik, isolasi dependensi seperti database, network, atau waktu dengan mocks/stubs/fakes.</p>
+        <ul class="list-disc list-inside text-sm text-light-text-secondary dark:text-dark-text-secondary">
+          <li>Mock: menggantikan dependensi dengan implementasi yang dapat dikontrol.</li>
+          <li>Stub: memberikan nilai yang sudah ditentukan.</li>
+          <li>Fake: implementasi ringan yang berfungsi seperti asli (mis. in-memory DB).</li>
+        </ul>
+      </section>
+
+      <section class="mb-6">
+        <h3 class="text-lg font-bold mb-2">Strategi Suite & CI</h3>
+        <p class="text-sm text-light-text-secondary dark:text-dark-text-secondary mb-2">Jaga agar unit tests cepat (<1s per test idealnya), jalankan di CI pada setiap commit. Pisahkan suite: unit (fast), integration (slower), E2E (slowest).</p>
+      </section>
+
+      <section class="mb-6">
+        <h3 class="text-lg font-bold mb-2">Framework & Tools — rekomendasi singkat</h3>
+        <ul class="list-disc list-inside text-sm text-light-text-secondary dark:text-dark-text-secondary">
+          <li>Java: JUnit + Mockito untuk mocking</li>
+          <li>JavaScript/Node: Jest (inkl. mocking), sinon untuk mocking khusus</li>
+          <li>Python: pytest + pytest-mock</li>
+        </ul>
+      </section>
+
+      <section class="mt-8 flex items-center justify-between">
+        <a href="Rangkuman4.html" class="text-sm text-light-text-secondary dark:text-dark-text-secondary hover:underline">← Sebelumnya: Kelompok 4</a>
+        <a href="Rangkuman6.html" class="inline-block bg-brand-primary text-white px-4 py-2 rounded">Berikutnya: Kelompok 6 →</a>
+      </section>
+    </article>
+  </main>
+
+  <footer class="border-t border-light-border dark:border-dark-border py-6 text-center text-sm text-light-text-secondary dark:text-dark-text-secondary">© 2025 Fathan Wibowo</footer>
+</body>
+</html>

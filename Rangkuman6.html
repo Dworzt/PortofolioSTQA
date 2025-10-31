@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Rangkuman Kelompok 6 - API Testing</title>
+  <script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { fontFamily:{'sans':['Inter','sans-serif'],'source':['Source Sans Pro','sans-serif']}, colors:{'light-bg':'#f7f7f7','light-card':'#ffffff','light-text':'#333333','light-text-secondary':'#555555','light-border':'#e5e7eb','light-brand':'#0ea5e9','dark-bg':'#1b1b1e','dark-card':'#2a2a2e','dark-text':'#e5e5e5','dark-text-secondary':'#a0a0a0','dark-border':'#3a3a3e','dark-brand':'#38bdf8','brand-dark':'#111827','brand-card':'#1F2937','brand-primary':'#38bdf8','brand-secondary':'#9ca3af'} } } }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>body{font-family:'Inter',sans-serif} h1,h2,h3{font-family:'Source Sans Pro',sans-serif}</style>
+</head>
+<body class="bg-light-bg dark:bg-dark-bg min-h-screen text-light-text dark:text-dark-text">
+  <header class="bg-light-card dark:bg-dark-card border-b border-light-border dark:border-dark-border">
+    <div class="max-w-5xl mx-auto px-6 py-6 flex items-center justify-between">
+      <a href="MainRangkumanPage.html" class="text-lg font-bold text-light-text dark:text-dark-text">← Daftar Rangkuman</a>
+      <nav><a href="index.html" class="text-sm text-light-text-secondary dark:text-dark-text-secondary">Portfolio</a></nav>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-6 py-12">
+    <article>
+      <h1 class="text-3xl md:text-4xl font-extrabold mb-4">Kelompok 6: API Testing</h1>
+      <p class="text-lg text-light-text-secondary dark:text-dark-text-secondary mb-6">Panduan lengkap untuk testing API: definisi tujuan, tipe pengujian (functional, contract, performance, security), strategi otomatisasi, contoh skenario, dan praktik untuk menjaga API robust dan terpercaya.</p>
+
+      <section class="bg-light-card dark:bg-dark-card p-6 rounded-lg shadow border border-light-border dark:border-dark-border mb-6">
+        <h2 class="text-xl font-semibold mb-3">Mengapa API Testing Penting?</h2>
+        <p class="text-sm text-light-text-secondary dark:text-dark-text-secondary">API adalah lapisan yang mengikat frontend, backend, dan layanan pihak ketiga. Error di API sering menyebabkan banyak kegagalan fungsi. API tests cepat, deterministic, dan bagus untuk contract & integration checks.</p>
+      </section>
+
+      <section class="mb-6">
+        <h3 class="text-lg font-bold mb-2">Tipe Pengujian API</h3>
+        <ul class="list-disc list-inside text-sm text-light-text-secondary dark:text-dark-text-secondary space-y-1">
+          <li><strong>Functional tests:</strong> verifikasi endpoint berperilaku sesuai spesifikasi.</li>
+          <li><strong>Contract tests:</strong> memastikan konsumen/penyedia API setuju terhadap schema & contract (mis. Pact).</li>
+          <li><strong>Performance tests:</strong> beban / stress pada endpoint kritis (latency, throughput).</li>
+          <li><strong>Security tests:</strong> authentication, authorization, input validation, injection tests.</li>
+        </ul>
+      </section>
+
+      <section class="mb-6">
+        <h3 class="text-lg font-bold mb-2">Anatomi Request & Response (Detail)</h3>
+        <p class="text-sm text-light-text-secondary dark:text-dark-text-secondary mb-2">Pastikan setiap tes memeriksa: method, endpoint, path params, query params, headers (content-type, auth), body, dan status code. Verifikasi juga schema (required fields, types) dan nilai penting.</p>
+        <ul class="list-disc list-inside text-sm text-light-text-secondary dark:text-dark-text-secondary">
+          <li>Response time assertions (SLA): mis. 95th percentile < 500ms untuk GET /items</li>
+          <li>Schema validation: gunakan JSON Schema atau tools yang mendukung contract tests.</li>
+        </ul>
+      </section>
+
+      <section class="mb-6">
+        <h3 class="text-lg font-bold mb-2">Contoh Skenario Pengujian</h3>
+        <ol class="list-decimal list-inside text-sm text-light-text-secondary dark:text-dark-text-secondary">
+          <li>Smoke: health-check endpoint → 200 OK</li>
+          <li>CRUD flow: create → read → update → delete, verifikasi persistence</li>
+          <li>Negative tests: invalid payload, missing auth, invalid param types</li>
+          <li>Rate limit: melebihi batas dan periksa 429</li>
+        </ol>
+      </section>
+
+      <section class="mb-6">
+        <h3 class="text-lg font-bold mb-2">Tools & Automasi</h3>
+        <ul class="list-disc list-inside text-sm text-light-text-secondary dark:text-dark-text-secondary">
+          <li>Exploratory: Postman (collections), Insomnia</li>
+          <li>Automasi: Newman (Postman CLI), REST Assured, Supertest + Jest, pytest + requests</li>
+          <li>Contract: Pact untuk consumer-driven contract testing</li>
+          <li>Performance: k6, JMeter</li>
+        </ul>
+      </section>
+
+      <section class="mb-6">
+        <h3 class="text-lg font-bold mb-2">Security & Edge Cases</h3>
+        <p class="text-sm text-light-text-secondary dark:text-dark-text-secondary mb-2">Uji autentikasi (expired tokens), authorization (akses ke resources terlarang), input validation (SQL/NoSQL injection), dan payload boundary cases (very large body, empty fields).</p>
+      </section>
+
+      <section class="mb-6">
+        <h3 class="text-lg font-bold mb-2">Best Practices</h3>
+        <ul class="list-disc list-inside text-sm text-light-text-secondary dark:text-dark-text-secondary">
+          <li>Isolasi environment: gunakan test/staging env, mock third-party yang tidak stabil.</li>
+          <li>Automate smoke tests on deploy; run full API test suite in CI nightly or per PR.</li>
+          <li>Use contract tests to avoid integration breakages between teams.</li>
+        </ul>
+      </section>
+
+      <section class="mt-8 flex items-center justify-between">
+        <a href="Rangkuman5.html" class="text-sm text-light-text-secondary dark:text-dark-text-secondary hover:underline">← Sebelumnya: Kelompok 5</a>
+        <a href="Rangkuman7.html" class="inline-block bg-brand-primary text-white px-4 py-2 rounded">Berikutnya: Kelompok 7 →</a>
+      </section>
+    </article>
+  </main>
+
+  <footer class="border-t border-light-border dark:border-dark-border py-6 text-center text-sm text-light-text-secondary dark:text-dark-text-secondary">© 2025 Fathan Wibowo</footer>
+</body>
+</html>

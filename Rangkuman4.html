@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Rangkuman Kelompok 4 - Test Scenario, Case, & Bug Report</title>
+  <script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { fontFamily:{'sans':['Inter','sans-serif'],'source':['Source Sans Pro','sans-serif']}, colors:{'light-bg':'#f7f7f7','light-card':'#ffffff','light-text':'#333333','light-text-secondary':'#555555','light-border':'#e5e7eb','light-brand':'#0ea5e9','dark-bg':'#1b1b1e','dark-card':'#2a2a2e','dark-text':'#e5e5e5','dark-text-secondary':'#a0a0a0','dark-border':'#3a3a3e','dark-brand':'#38bdf8','brand-dark':'#111827','brand-card':'#1F2937','brand-primary':'#38bdf8','brand-secondary':'#9ca3af'} } } }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>body{font-family:'Inter',sans-serif} h1,h2,h3{font-family:'Source Sans Pro',sans-serif}</style>
+</head>
+<body class="bg-light-bg dark:bg-dark-bg min-h-screen text-light-text dark:text-dark-text">
+  <header class="bg-light-card dark:bg-dark-card border-b border-light-border dark:border-dark-border">
+    <div class="max-w-5xl mx-auto px-6 py-6 flex items-center justify-between">
+      <a href="MainRangkumanPage.html" class="text-lg font-bold text-light-text dark:text-dark-text">← Daftar Rangkuman</a>
+      <nav><a href="index.html" class="text-sm text-light-text-secondary dark:text-dark-text-secondary">Portfolio</a></nav>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-6 py-12">
+    <article>
+      <h1 class="text-3xl md:text-4xl font-extrabold mb-4">Kelompok 4: Test Scenario, Case, & Bug Report</h1>
+      <p class="text-lg text-light-text-secondary dark:text-dark-text-secondary mb-6">Catatan lengkap tentang bagaimana menerjemahkan kebutuhan dan test plan menjadi scenario dan test case yang dapat dieksekusi, serta bagaimana menyusun bug report yang membantu proses perbaikan menjadi efisien.</p>
+
+      <section class="bg-light-card dark:bg-dark-card p-6 rounded-lg shadow border border-light-border dark:border-dark-border mb-6">
+        <h2 class="text-xl font-semibold mb-3">Dari Requirement → Scenario → Test Case</h2>
+        <p class="mb-3 text-sm text-light-text-secondary dark:text-dark-text-secondary">Alur ideal: requirement/user story → test scenario (high-level) → test case (langkah terperinci). Scenario membantu merangkum intent; case memungkinkan reproduksi dan automasi.</p>
+        <ul class="list-disc list-inside text-sm text-light-text-secondary dark:text-dark-text-secondary">
+          <li><strong>Scenario:</strong> "Pengguna menghitung BMI dan melihat history"</li>
+          <li><strong>Test Case:</strong> langkah-langkah login → input data → klik hitung → verifikasi hasil → verifikasi history tersimpan</li>
+        </ul>
+      </section>
+
+      <section class="mb-6">
+        <h3 class="text-lg font-bold mb-2">Menyusun Test Case yang Baik (Checklist)</h3>
+        <ul class="list-disc list-inside text-sm text-light-text-secondary dark:text-dark-text-secondary space-y-2">
+          <li>Gunakan ID unik dan judul deskriptif (TC-001: Valid BMI Calculation).</li>
+          <li>Isi: tujuan, pra-kondisi, langkah (sederhana & terukur), data uji, hasil yang diharapkan, pasca-kondisi.</li>
+          <li>Tambahkan prioritas dan estimasi waktu eksekusi.</li>
+          <li>Catat apakah test bisa diotomasi atau manual, dan jika otomatis, link ke skrip.</li>
+        </ul>
+      </section>
+
+      <section class="mb-6">
+        <h3 class="text-lg font-bold mb-2">Template Singkat Test Case</h3>
+        <div class="bg-light-card dark:bg-dark-card p-4 rounded border border-light-border dark:border-dark-border text-sm text-light-text-secondary dark:text-dark-text-secondary">
+          <strong>ID:</strong> TC-001<br>
+          <strong>Title:</strong> Valid BMI Calculation<br>
+          <strong>Preconditions:</strong> User logged in, form available<br>
+          <strong>Steps:</strong>
+          <ol class="list-decimal list-inside ml-4">
+            <li>Open BMI page</li>
+            <li>Set height=170, weight=65</li>
+            <li>Click "Hitung"</li>
+          </ol>
+          <strong>Expected:</strong> BMI = 22.5 (approx) dan entry muncul di history
+        </div>
+      </section>
+
+      <section class="mb-6">
+        <h3 class="text-lg font-bold mb-2">Bug Report: Struktur & Contoh</h3>
+        <p class="text-sm text-light-text-secondary dark:text-dark-text-secondary mb-2">Bug report harus memudahkan developer memahami, mereproduksi, dan memperbaikinya. Sertakan environment, langkah reproduksi, aktual vs ekspektasi, attachment (screenshot/log), severity & priority.</p>
+        <div class="bg-light-card dark:bg-dark-card p-4 rounded border border-light-border dark:border-dark-border text-sm text-light-text-secondary dark:text-dark-text-secondary">
+          <strong>Title:</strong> Error when saving BMI history (500)<br>
+          <strong>Steps:</strong> 1) Login; 2) Calculate BMI; 3) Click save<br>
+          <strong>Actual:</strong> Server returns 500, entry not saved<br>
+          <strong>Expected:</strong> 201 Created, entry saved in history<br>
+          <strong>Env:</strong> Staging, build v1.2.0, Chrome 116<br>
+          <strong>Severity:</strong> Major — data loss<br>
+          <strong>Attachments:</strong> Screenshot, server logs
+        </div>
+      </section>
+
+      <section class="mb-6">
+        <h3 class="text-lg font-bold mb-2">Triage & Alur Penanganan Bug</h3>
+        <ol class="list-decimal list-inside text-sm text-light-text-secondary dark:text-dark-text-secondary">
+          <li>Validasi laporan (QA reproduces)</li>
+          <li>Assign & klasifikasi (severity/priority)</li>
+          <li>Developer investigates & fixes</li>
+          <li>QA verifies fix, regression test related flows</li>
+          <li>Close bug with notes</li>
+        </ol>
+      </section>
+
+      <section class="mb-6">
+        <h3 class="text-lg font-bold mb-2">Eksekusi Test & Hasil</h3>
+        <p class="text-sm text-light-text-secondary dark:text-dark-text-secondary mb-2">Standarisasi hasil: Passed, Failed, Blocked, Skipped. Selalu hubungkan hasil ke test case ID supaya traceability terjaga.</p>
+      </section>
+
+      <section class="mt-8 flex items-center justify-between">
+        <a href="Rangkuman3.html" class="text-sm text-light-text-secondary dark:text-dark-text-secondary hover:underline">← Sebelumnya: Kelompok 3</a>
+        <a href="Rangkuman5.html" class="inline-block bg-brand-primary text-white px-4 py-2 rounded">Berikutnya: Kelompok 5 →</a>
+      </section>
+    </article>
+  </main>
+
+  <footer class="border-t border-light-border dark:border-dark-border py-6 text-center text-sm text-light-text-secondary dark:text-dark-text-secondary">© 2025 Fathan Wibowo</footer>
+</body>
+</html>
